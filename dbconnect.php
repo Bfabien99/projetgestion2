@@ -108,8 +108,8 @@
                         $img_upload_path = 'upload/'.$new_img_name;
                         move_uploaded_file($tmp_name, $img_upload_path);
                         $db = databaseConnect();
-                        $query = $db->prepare('UPDATE admin SET name = :name , pseudo = :identifiant , password = :pass , email = :email, tel =:tel, picture= :picture WHERE id = :id');
-                        $query->execute([
+                        $query = $db->prepare('UPDATE admin SET name=:name , pseudo=:identifiant , password=:pass , email=:email, tel=:tel, picture=:picture WHERE id =:id');
+                        $result = $query->execute([
                         'id' => $_GET['adminid'],
                         'name' => htmlspecialchars($_POST['name']),
                         'identifiant' => htmlspecialchars($_POST['identifiant']),
@@ -129,7 +129,15 @@
             }
             else
             {
-                $em = "Unknow error";
-                header("Location:update.php?error=$em");
+                $db = databaseConnect();
+                        $query = $db->prepare('UPDATE admin SET name=:name , pseudo=:identifiant , password=:pass , email=:email, tel=:tel WHERE id =:id');
+                        $result = $query->execute([
+                        'id' => $_GET['adminid'],
+                        'name' => htmlspecialchars($_POST['name']),
+                        'identifiant' => htmlspecialchars($_POST['identifiant']),
+                        'pass' => htmlspecialchars($_POST['pass']),
+                        'email' => htmlspecialchars($_POST['email']),
+                        'tel' => htmlspecialchars($_POST['tel']),
+                        ]);
             }
     }

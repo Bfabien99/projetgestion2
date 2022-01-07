@@ -6,7 +6,7 @@ if (isset($_GET['error'])) {
 else{
     
 }
-if (isset($_POST['search'])) {
+if (isset($_POST['search']) && !empty($_POST['search'])) {
     header("location:index.php?q={$_POST['search']}");
 }
 

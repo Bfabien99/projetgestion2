@@ -6,10 +6,12 @@ if (isset($_GET['error'])) {
 $id;
     if (isset($_GET['adminid'])) {
         $id = $_GET['adminid'];
+        if (isset($_POST['update'])) {
+            adminUpdate();
+        }
     }
-    if (isset($_POST['update']) && isset($_FILES['picture'])) {
-        adminUpdate();
-    }
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +23,7 @@ $id;
 </head>
 <body>
     <div class="container">
-        <form action="" method="post">
+        <form enctype="multipart/form-data" action="" method="POST">
         <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" name="name" placeholder="Votre nom">
