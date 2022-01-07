@@ -26,7 +26,8 @@
         <h3>Propriétaire = <?= $show->ownername; ?> </h3>
         <h3>Contact = <?= $show->ownertel; ?> </h3>
         <h3>Localisation = <?= $show->location; ?> </h3>
-        <h3>Superficie = <?= $show->area; ?> </h3>
+        <h3>Superficie = <?= $show->area; ?> m2</h3>
+        <h3>Prix = <?= number_format($show->price, 0, '.', '.'); ?> Fcfa</h3>
         <h3>Détails = <?= $show->details; ?> </h3>
     </div>
     <a href="index.php">retour</a>

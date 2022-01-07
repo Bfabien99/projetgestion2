@@ -12,17 +12,16 @@ if (isset($_POST['search'])) {
 
 if (isset($_GET['q'])) {
     $q = $_GET['q'];
-    $s = '%'. $q . '%';
     $connect = databaseConnect();
-    $query = $connect->prepare("SELECT * FROM proprietes  WHERE price <= :prix OR location LIKE :location");
+    $query = $connect->prepare("SELECT * FROM proprietes  WHERE price <= :prix OR location =:location");
     $query->execute([
         'prix' => $q,
-        'location' => $s
+        'location' => $q
     ]);
     $articles = $query->fetchAll(PDO::FETCH_ASSOC);
 }else {
     $connect = databaseConnect();
-    $query = $connect->prepare("SELECT * FROM proprietes  ORDER BY postdate ASC LIMIT 8");
+    $query = $connect->prepare("SELECT * FROM proprietes  ORDER BY postdate ASC");
     $query->execute();
     $articles = $query->fetchAll(PDO::FETCH_ASSOC);
 }

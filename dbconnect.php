@@ -52,14 +52,14 @@
                         $query = $db->prepare('INSERT INTO proprietes(ownername, ownertel, postdate, picture, details, price, location, area) VALUES (:name, :tel, :date, :picture, :details, :price, :location, :area)');
                         
                         $result = $query->execute([
-                        'name' => $_POST['Oname'],
-                        'tel' => $_POST['Otel'],
+                        'name' => htmlspecialchars($_POST['Oname']),
+                        'tel' => htmlspecialchars($_POST['Otel']),
                         'date' => date('Y-m-d'),
                         'picture' => $new_img_name,
-                        'details' => $_POST['details'],
-                        'price' => $_POST['price'],
-                        'location' => $_POST['location'],
-                        'area' => $_POST['area']
+                        'details' => strtolower(htmlspecialchars($_POST['details'])),
+                        'price' => htmlspecialchars($_POST['price']),
+                        'location' => strtolower(htmlspecialchars($_POST['location'])),
+                        'area' => htmlspecialchars($_POST['area'])
                         ]);
                         var_dump($result);
                         var_dump($_POST);
@@ -111,11 +111,11 @@
                         $query = $db->prepare('UPDATE admin SET name = :name , pseudo = :identifiant , password = :pass , email = :email, tel =:tel, picture= :picture WHERE id = :id');
                         $query->execute([
                         'id' => $_GET['adminid'],
-                        'name' => $_POST['name'],
-                        'identifiant' => $_POST['identifiant'],
-                        'pass' => $_POST['pass'],
-                        'email' => $_POST['email'],
-                        'tel' => $_POST['tel'],
+                        'name' => htmlspecialchars($_POST['name']),
+                        'identifiant' => htmlspecialchars($_POST['identifiant']),
+                        'pass' => htmlspecialchars($_POST['pass']),
+                        'email' => htmlspecialchars($_POST['email']),
+                        'tel' => htmlspecialchars($_POST['tel']),
                         'picture' => $new_img_name,
                         ]);
                     }

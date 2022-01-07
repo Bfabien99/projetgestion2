@@ -29,7 +29,7 @@
 
             <div class="form-group">
                 <label for="tel">Contact</label>
-                <input type="number" name="Otel" placeholder="Contact du vendeur">
+                <input type="tel" name="Otel" placeholder="Contact du vendeur">
             </div>
 
             <div class="line"></div>
@@ -56,7 +56,7 @@
 
             <div class="form-group">
                 <label for="price">Prix</label>
-                <input type="text" name="price" placeholder="Prix de la propriété">
+                <input type="number" name="price" placeholder="Prix de la propriété">
             </div>
 
             <div class="line"></div>
