@@ -1,0 +1,18 @@
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1em;
+}
+a{
+    width: 20%;
+}
+
+.box-cont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+    border: 2px solid black;
+}
