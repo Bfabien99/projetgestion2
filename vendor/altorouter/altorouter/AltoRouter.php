@@ -190,7 +190,7 @@ class AltoRouter
     {
 
         $params = [];
-
+//        var_dump($requestUrl,$requestMethod,'\n');
         // set Request Url if it isn't passed as parameter
         if ($requestUrl === null) {
             $requestUrl = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
@@ -210,7 +210,8 @@ class AltoRouter
         if ($requestMethod === null) {
             $requestMethod = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';
         }
-
+//        var_dump($requestUrl,$requestMethod);
+//        var_dump($this->routes);
         foreach ($this->routes as $handler) {
             list($methods, $route, $target, $name) = $handler;
 
@@ -241,7 +242,6 @@ class AltoRouter
                 $regex = $this->compileRoute($route);
                 $match = preg_match($regex, $requestUrl, $params) === 1;
             }
-
             if ($match) {
                 if ($params) {
                     foreach ($params as $key => $value) {

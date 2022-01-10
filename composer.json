@@ -1,8 +1,9 @@
 {
     "require-dev": {
-        "symfony/var-dumper": "^6.0"
+        "symfony/var-dumper": "^5.0"
     },
     "require": {
-        "altorouter/altorouter": "^2.0"
+        "altorouter/altorouter": "^2.0",
+        "aura/router": "^3.1"
     }
 }
