@@ -1,6 +1,6 @@
 <?php
     $id;
-    require 'controller/controller.php';
+    require '../controller/controller.php';
     $show = showProperty();
 ?>
 

@@ -1,5 +1,5 @@
 <?php 
-    require 'controller/controller.php';
+    require '../controller/controller.php';
     EditProperty();
 ?>
 <!DOCTYPE html>

@@ -1,5 +1,5 @@
 <?php 
-    require 'model/model.php';
+    require '../model/model.php';
 
     //updateAdmin.php
     if (isset($_GET['error'])) {

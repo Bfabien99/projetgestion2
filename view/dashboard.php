@@ -1,5 +1,5 @@
 <?php
-require 'controller/controller.php';
+require '../controller/controller.php';
 $articles = Dashboard();
 ?>
 <!DOCTYPE html>
