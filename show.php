@@ -1,15 +1,7 @@
 <?php
     $id;
-    require 'dbconnect.php';
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $connect = databaseConnect();
-        $req = $connect->prepare("SELECT * FROM proprietes WHERE id = :id ");
-        $req->execute([
-            'id'=>$id,
-        ]);
-        $show = $req->fetch(); 
-    }
+    require 'controller/controller.php';
+    $show = showProperty();
 ?>
 
 <!DOCTYPE html>

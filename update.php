@@ -1,16 +1,5 @@
 <?php
-require 'dbconnect.php';
-if (isset($_GET['error'])) {
-    echo $_GET['error'];
-}
-$id;
-    if (isset($_GET['adminid'])) {
-        $id = $_GET['adminid'];
-        if (isset($_POST['update'])) {
-            //controle de securité pour comparer les mots de passe.
-            adminUpdate();
-        }
-    }
+require 'controller/controller.php';
 
     
 ?>

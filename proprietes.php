@@ -1,30 +1,6 @@
 <?php
-require 'dbconnect.php';
-if (isset($_GET['error'])) {
-    echo $_GET['error'];
-}
-else{
-    
-}
-if (isset($_POST['search'])) {
-    header("location:index.php?q={$_POST['search']}");
-}
-
-if (isset($_GET['q'])) {
-    $q = $_GET['q'];
-    $connect = databaseConnect();
-    $query = $connect->prepare("SELECT * FROM proprietes  WHERE price <= :prix OR location =:location");
-    $query->execute([
-        'prix' => $q,
-        'location' => $q
-    ]);
-    $articles = $query->fetchAll(PDO::FETCH_ASSOC);
-}else {
-    $connect = databaseConnect();
-    $query = $connect->prepare("SELECT * FROM proprietes  ORDER BY postdate ASC");
-    $query->execute();
-    $articles = $query->fetchAll(PDO::FETCH_ASSOC);
-}
+require 'controller/controller.php';
+$articles = viewAllproprerties();
 ?>
 <!DOCTYPE html>
 <html lang="en">

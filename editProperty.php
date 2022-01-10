@@ -1,6 +1,6 @@
 <?php 
     require 'controller/controller.php';
-    addProperty();
+    EditProperty();
 ?>
 <!DOCTYPE html>
 <html lang="en">

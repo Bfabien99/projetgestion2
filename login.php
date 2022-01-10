@@ -1,5 +1,6 @@
 <?php
-
+    require 'controller/controller.php';
+    login();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="img.php" method="post">
+        <form action="" method="post">
         <div class="form-group">
                 <label for="identifiant">Identifiant</label>
                 <input type="text" name="identifiant" placeholder="Identifiant">

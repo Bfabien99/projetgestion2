@@ -1,13 +1,6 @@
 <?php
-require 'dbconnect.php';
-$id;
-    if (isset($_GET['adminid'])) {
-        $id = $_GET['adminid'];
-    }
-    $connect = databaseConnect();
-    $query = $connect->prepare("SELECT * FROM proprietes  ORDER BY postdate ASC");
-    $query->execute();
-    $articles = $query->fetchAll(PDO::FETCH_ASSOC);
+require 'controller/controller.php';
+$articles = Dashboard();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +24,7 @@ $id;
                     <h2>Superficie :<?= $article['area'] ?> m²</h2>
                     <h2>Lieu :<?= $article['location'] ?></h2>
                     <a href="delete.php?articleid=<?=$article['id']?>">supprimer</a>
+                    <a href="editProperty.php?articleid=<?=$article['id']?>">modifier</a>
                     
             </div>
             </a>
